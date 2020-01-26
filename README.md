@@ -29,41 +29,84 @@ Mac OS X Setup instructions and examples for the WiFi Kit 32 Board
 
 	```
 	% esptool.py --port /dev/tty.SLAB_USBtoUART flash_id
-	esptool.py v2.2
-	Connecting........_____..
+	esptool.py v2.8
+	Serial port /dev/tty.SLAB_USBtoUART
+	Connecting........_
 	Detecting chip type... ESP32
 	Chip is ESP32D0WDQ6 (revision 1)
+	Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+	Crystal is 26MHz
+	MAC: 2x:xx:xx:xx:xx:x8
 	Uploading stub...
 	Running stub...
 	Stub running...
 	Manufacturer: ef
-	Device: 4016
-	Detected flash size: 4MB
-	Hard resetting…
+	Device: 4017
+	Detected flash size: 8MB
+	Hard resetting via RTS pin...
 	```
 	
 	```
 	% esptool.py --port /dev/tty.SLAB_USBtoUART chip_id
-	esptool.py v2.2
+	esptool.py v2.8
+	Serial port /dev/tty.SLAB_USBtoUART
 	Connecting........_
 	Detecting chip type... ESP32
 	Chip is ESP32D0WDQ6 (revision 1)
+	Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+	Crystal is 26MHz
+	MAC: 24:6f:28:79:10:f8
 	Uploading stub...
 	Running stub...
 	Stub running...
-	Chip ID: 0xcb30aea44c4f
-	Hard resetting…
+	Warning: ESP32 has no Chip ID. Reading MAC instead.
+	MAC: 2x:xx:xx:xx:xx:x8
+	Hard resetting via RTS pin...
 	```
 1. Erase the flash
 
-	```
-	% esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash
-	```	
+  ```
+  % esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash
+  esptool.py v2.8
+  Serial port /dev/tty.SLAB_USBtoUART
+  Connecting........_____.
+  Detecting chip type... ESP32
+  Chip is ESP32D0WDQ6 (revision 1)
+  Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+  Crystal is 26MHz
+  MAC: 2x:xx:xx:xx:xx:x8
+  Uploading stub...
+  Running stub...
+  Stub running...
+  Erasing flash (this may take a while)...
+  Chip erase completed successfully in 18.9s
+  Hard resetting via RTS pin...
+  ```
 
 1. Upload the Micropython firmware
 
 	```
-	% esptool.py --port /dev/tty.SLAB_USBtoUART write_flash -z 0x1000 ~/Downloads/esp32-20171226-v1.9.3-217-g5de064fb.bin
+	% esptool.py --port /dev/tty.SLAB_USBtoUART write_flash -z 0x1000 ~/Downloads/esp32-idf3-20200125-v1.12-87-g96716b46e.bin
+	esptool.py v2.8
+	Serial port /dev/tty.SLAB_USBtoUART
+	Connecting........_
+	Detecting chip type... ESP32
+	Chip is ESP32D0WDQ6 (revision 1)
+	Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+	Crystal is 26MHz
+	MAC: 2x:xx:xx:xx:xx:x8
+	Uploading stub...
+	Running stub...
+	Stub running...
+	Configuring flash size...
+	Auto-detected Flash size: 8MB
+	Flash params set to 0x0230
+	Compressed 1433664 bytes to 912886...
+	Wrote 1433664 bytes (912886 compressed) at 0x00001000 in 80.8 seconds (effective 141.9 kbit/s)...
+	Hash of data verified.
+	
+	Leaving...
+	Hard resetting via RTS pin...
 	```
 	
 1. Connect to the board and verify Micropython
