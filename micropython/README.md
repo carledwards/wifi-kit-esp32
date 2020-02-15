@@ -1,5 +1,5 @@
 # wifi-kit-esp32
-Mac OS X Setup instructions and examples for the WiFi Kit 32 Board
+Mac OS X Micropython setup instructions and examples for the WiFi Kit 32 Board
 
 ![](http://esp32.net/images/Heltec/WIFI-Kit-32/Heltec_WIFI-Kit-32_PhotoDisplay.jpg)
 
