@@ -13,7 +13,7 @@ Mac OS X Micropython setup instructions and examples for the WiFi Kit 32 Board
 Python 3.7.6
 ```
 
-3. Make sure you have the [drivers for SLAB_USBtoUART](https://rehmann.co/blog/wp-content/uploads/2016/12/Mac_OSX_VCP_Driver.zip) installed
+3. Make sure you have the [drivers for SLAB_USBtoUART](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) installed
 
 ## Setup
 
