@@ -3,7 +3,7 @@ Mac OS X Micropython setup instructions and examples for the WiFi Kit 32 Board
 
 ![](http://esp32.net/images/Heltec/WIFI-Kit-32/Heltec_WIFI-Kit-32_PhotoDisplay.jpg)
 
-##Prerequisites
+## Prerequisites
 1. Using Mac OS X
 2. Python 3 is installed and is the default in the path
 
@@ -22,22 +22,22 @@ Python 3.7.6
 	% pip3 install esptool --upgrade
 	```
 	
-1. Install Adafruit Micropython Tool (ampy)
+2. Install Adafruit Micropython Tool (ampy)
 
 	```shell
 	% pip3 install adafruit-ampy
 	```
 	
-1. Download the Micropython ESP32 firmware from here: [https://micropython.org/download#esp32](https://micropython.org/download#esp32).  Choose the GENERIC firmware for "**Firmware built with ESP-IDF v3.x, with support for BLE, LAN and PPP**".  E.g. **GENERIC : esp32-idf3-20200301-v1.12-210-g1993c8cf9.bin**
+3. Download the Micropython ESP32 firmware from here: [https://micropython.org/download#esp32](https://micropython.org/download#esp32).  Choose the GENERIC firmware for "**Firmware built with ESP-IDF v3.x, with support for BLE, LAN and PPP**".  E.g. **GENERIC : esp32-idf3-20200301-v1.12-210-g1993c8cf9.bin**
 
-1. Connect the board to the computer.  Verify the USB connection is present:
+4. Connect the board to the computer.  Verify the USB connection is present:
 
 	```shell
 	% ls /dev/tty.SLAB*
 	/dev/tty.SLAB_USBtoUART
 	```
 
-1. Test the communications:
+5. Test the communications:
 
 	```shell
 	% esptool.py --port /dev/tty.SLAB_USBtoUART flash_id
@@ -76,7 +76,7 @@ Python 3.7.6
 	Hard resetting via RTS pin...
 	```
 	
-1. Erase the flash
+6. Erase the flash
 
   ```shell
   % esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash
@@ -96,7 +96,7 @@ Python 3.7.6
   Hard resetting via RTS pin...
   ```
 
-1. Upload the Micropython firmware
+7. Upload the Micropython firmware
 
 	```shell
 	% esptool.py --port /dev/tty.SLAB_USBtoUART write_flash -z 0x1000 ~/Downloads/esp32-idf3-20200301-v1.12-210-g1993c8cf9.bin
@@ -122,7 +122,7 @@ Python 3.7.6
 	Hard resetting via RTS pin...
 	```
 	
-1. Connect to the board and verify Micropython
+8. Connect to the board and verify Micropython
 
   ```shell
   screen /dev/tty.SLAB_USBtoUART 115200
@@ -140,15 +140,15 @@ Python 3.7.6
 
 *To exit the screen utility, press "control+a" then "k" and then "y"*
 
-1. Download the OLED SSD1306 python library and unzip: [https://github.com/adafruit/micropython-adafruit-ssd1306](https://github.com/adafruit/micropython-adafruit-ssd1306)
+9. Download the OLED SSD1306 python library and unzip: [https://github.com/adafruit/micropython-adafruit-ssd1306](https://github.com/adafruit/micropython-adafruit-ssd1306)
 
-1. Upload the ssd1306 library:
+10. Upload the ssd1306 library:
 
 	```shell
 	ampy --port /dev/tty.SLAB_USBtoUART put ~/Downloads/micropython-adafruit-ssd1306-master/ssd1306.py
 	```
 
-1. Test the OLED display.  While in the REPL connected with the screen utility, enter the following code:
+11. Test the OLED display.  While in the REPL connected with the screen utility, enter the following code:
 
 	```python
 	import machine, ssd1306
