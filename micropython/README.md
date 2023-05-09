@@ -169,7 +169,7 @@ Python 3.7.6
 
 ## Reference
 
-[WIFI Kit 32 Pinout Diagram](http://esp32.net/images/Heltec/WIFI-Kit-32/Heltec_WIFI-Kit-32_DiagramPinout.jpg)
+[WIFI Kit 32 Pinout Diagram](http://esp32.net/images/Heltec/WIFI-Kit-32/Heltec_WIFI-Kit-32_DiagramPinout.jpg) (bottom view)
 
 ![WIFI Kit 32 Pinout Diagram](http://esp32.net/images/Heltec/WIFI-Kit-32/Heltec_WIFI-Kit-32_DiagramPinout.jpg)
 
